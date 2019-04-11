@@ -319,6 +319,10 @@ public class Main {
         }
 
         public MavenArtifact getRelated(Kind kind) {
+            if (this.kind == kind) {
+                return this;
+            }
+            
             final String kindSuffix;
             switch (kind) {
             case SOURCE:
